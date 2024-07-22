@@ -91,7 +91,7 @@ class CustomTextFormFields extends StatelessWidget {
               cursorHeight: 20,
               decoration: InputDecoration(
                 hintStyle: const TextStyle(fontSize: 14),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: StyleResources.primarycolor,width: 1)),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: StyleResources.primarycolor,width: 1)),
                 fillColor:Colors.black,
                 filled: true,
                 contentPadding: const EdgeInsets.all(10),
@@ -101,7 +101,7 @@ class CustomTextFormFields extends StatelessWidget {
                 hintText: hintText,
                 prefixIcon: prefixIcon,
               ),
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               onEditingComplete: onEditingComplete,
             ),
           ),

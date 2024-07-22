@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:expense_test_app/models/transaction_model.dart';
@@ -9,7 +11,7 @@ class TransactionsBloc extends Bloc<TransactionsEvent, TransactionsState> {
   final TransactionsRepository _transactionsRepository;
 
   TransactionsBloc({required TransactionsRepository transactionsRepository})
-      : this._transactionsRepository = transactionsRepository,
+      : _transactionsRepository = transactionsRepository,
         super(TransactionsState.initial()) {
     on<TransactionsEvent>(
         (TransactionsEvent event, Emitter<TransactionsState> emit) async {

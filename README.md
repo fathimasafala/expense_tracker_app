@@ -1,6 +1,22 @@
-# expense_test_app
 
-A new Flutter project.
+<img src='assets/images/app_icon.jpeg' width='85px'/>
+# Expense Tracker
+
+A Flutter project for expense managment
+
+## Details
+
+• [BLOC](https://github.com/felangel/bloc/tree/master/packages/flutter_bloc) for State Management
+
+• [FL_Chart](https://pub.dev/packages/fl_chart) for Line , Bar and Pie Chart
+
+• [sqflite](https://pub.dev/packages/sqflite) for database operations 
+
+SDK version : 3.19.3
+
+
+
+
 
 ## Getting Started
 

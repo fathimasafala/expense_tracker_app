@@ -1,4 +1,6 @@
 
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:expense_test_app/models/transaction_model.dart';
 import 'package:expense_test_app/utils/resources/color_resources.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -8,9 +10,8 @@ import 'widgets.dart';
 
 class WeekPieChart extends StatefulWidget {
   final List<Transaction> _transactions;
-  const WeekPieChart({Key? key, required List<Transaction> transactions})
-      : _transactions = transactions,
-        super(key: key);
+  const WeekPieChart({super.key, required List<Transaction> transactions})
+      : _transactions = transactions;
 
   @override
   _WeekPieChartState createState() => _WeekPieChartState();
@@ -36,7 +37,7 @@ class _WeekPieChartState extends State<WeekPieChart> {
   Widget build(BuildContext context) {
     double totalExpense = _generateWeeklyReport();
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       elevation: 7,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       color: Colors.black,
@@ -47,7 +48,7 @@ class _WeekPieChartState extends State<WeekPieChart> {
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Text(
+              const Text(
                 'Weekly Expenses',
                 style: TextStyle(
                   color: Colors.white,
@@ -60,7 +61,7 @@ class _WeekPieChartState extends State<WeekPieChart> {
               ),
               Text(
                 'Total : \$${totalExpense.toStringAsFixed(2)}',
-                style: TextStyle(
+                style: const TextStyle(
                   color: StyleResources.primarycolor,
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -116,7 +117,7 @@ class _WeekPieChartState extends State<WeekPieChart> {
                       ),
                       PieChartSectionData(
                         showTitle: false,
-                        color: Color.fromARGB(255, 164, 94, 13),
+                        color: const Color.fromARGB(255, 164, 94, 13),
                         value: _spendings[6],
                         radius: 75.0,
                       ),
@@ -124,7 +125,7 @@ class _WeekPieChartState extends State<WeekPieChart> {
                   ),
                 ),
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[

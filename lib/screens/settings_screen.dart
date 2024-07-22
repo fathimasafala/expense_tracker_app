@@ -9,14 +9,14 @@ import '../widgets/widgets.dart';
 import 'about_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        title: Text(
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text(
           'Settings',
           style: TextStyle(
               color: Colors.white, fontWeight: FontWeight.w700, fontSize: 25),
@@ -40,7 +40,7 @@ class SettingsScreen extends StatelessWidget {
               ),
               SettingsCard(
                 onTap: () async {
-                  final url = 'http://localhost:8080/privacy-policy';
+                  const url = 'http://localhost:8080/privacy-policy';
                   if (await canLaunch(url)) {
                     await launch(
                       url,
@@ -57,7 +57,7 @@ class SettingsScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => AboutScreen(),
+                      builder: (context) => const AboutScreen(),
                     ),
                   );
                 },

@@ -7,13 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class TransactionItem extends StatelessWidget {
-  TransactionItem({
-    Key? key,
+  const TransactionItem({
+    super.key,
     required Transaction transaction,
     required Function deleteTransaction,
   })  : _transaction = transaction,
-        _deleteTransaction = deleteTransaction,
-        super(key: key);
+        _deleteTransaction = deleteTransaction;
 
   final Transaction _transaction;
   final Function _deleteTransaction;
@@ -22,11 +21,11 @@ class TransactionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.black,
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       elevation: 8,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
-          side: BorderSide(width: 0.5, color: StyleResources.primarycolor)),
+          side: const BorderSide(width: 0.5, color: StyleResources.primarycolor)),
       child: Dismissible(
         key: Key(_transaction.id),
         background: Container(
@@ -34,8 +33,8 @@ class TransactionItem extends StatelessWidget {
             color: Colors.red,
             borderRadius: BorderRadius.circular(18),
           ),
-          padding: EdgeInsets.only(right: 20.0),
-          child: Align(
+          padding: const EdgeInsets.only(right: 20.0),
+          child: const Align(
             alignment: Alignment.centerRight,
             child: Icon(
               Icons.delete,
@@ -53,35 +52,35 @@ class TransactionItem extends StatelessWidget {
             builder: (BuildContext context) {
               return AlertDialog(
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(
+                  side: const BorderSide(
                       color: StyleResources.primarycolor, width: 1.0),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 backgroundColor: Colors.black,
-                title: Text(
+                title: const Text(
                   "Confirm",
                   style: TextStyle(color: StyleResources.primarycolor),
                 ),
-                content: Text(
+                content: const Text(
                   "Are you sure you wish to delete this transaction?",
                   style: TextStyle(color: Colors.white),
                 ),
                 actions: <Widget>[
                   ElevatedButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
                               StyleResources.primarycolor)),
                       onPressed: () => Navigator.of(context).pop(true),
-                      child: Text(
+                      child: const Text(
                         "DELETE",
                         style: TextStyle(color: Colors.white),
                       )),
                   ElevatedButton(
-                    style: ButtonStyle(
+                    style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
                             StyleResources.primarycolor)),
                     onPressed: () => Navigator.of(context).pop(false),
-                    child: Text(
+                    child: const Text(
                       "CANCEL",
                       style: TextStyle(color: Colors.white),
                     ),
@@ -104,8 +103,8 @@ class TransactionItem extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.symmetric(
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 20,
                 ),
@@ -117,8 +116,8 @@ class TransactionItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Text(
-                  '${_transaction.amount.parseCurrency()}',
-                  style: TextStyle(
+                  _transaction.amount.parseCurrency(),
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -131,7 +130,7 @@ class TransactionItem extends StatelessWidget {
                   children: [
                     Text(
                       _transaction.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -148,7 +147,7 @@ class TransactionItem extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(width: 10.0),
+              const SizedBox(width: 10.0),
             ],
           ),
         ),

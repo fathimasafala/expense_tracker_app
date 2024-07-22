@@ -1,4 +1,6 @@
 
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:bloc/bloc.dart';
 import 'package:expense_test_app/utils/resources/color_resources.dart';
 import 'package:flutter/material.dart';

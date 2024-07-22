@@ -1,4 +1,6 @@
 
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors_in_immutables
+
 import 'package:expense_test_app/models/transaction_model.dart';
 import 'package:expense_test_app/utils/resources/color_resources.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -7,7 +9,7 @@ import 'package:flutter/material.dart';
 class MonthLineChart extends StatefulWidget {
   final List<Transaction> transactions;
 
-  MonthLineChart({required this.transactions});
+  MonthLineChart({super.key, required this.transactions});
 
   @override
   _MonthLineChartState createState() => _MonthLineChartState();
@@ -36,7 +38,7 @@ class _MonthLineChartState extends State<MonthLineChart> {
   Widget build(BuildContext context) {
     double totalExpense = getTotalExpense();
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       elevation: 7,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       color: Colors.black,
@@ -45,7 +47,7 @@ class _MonthLineChartState extends State<MonthLineChart> {
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
-          Text(
+          const Text(
             'Monthly Expenses',
             style: TextStyle(
               color: Colors.white,
@@ -58,7 +60,7 @@ class _MonthLineChartState extends State<MonthLineChart> {
           ),
           Text(
             'Total : \$${totalExpense.toStringAsFixed(2)}',
-            style: TextStyle(
+            style: const TextStyle(
               color: StyleResources.primarycolor,
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -90,13 +92,13 @@ class _MonthLineChartState extends State<MonthLineChart> {
         drawVerticalLine: true,
         getDrawingHorizontalLine: (value) {
           return FlLine(
-            color: Color.fromARGB(255, 175, 175, 175),
+            color: const Color.fromARGB(255, 175, 175, 175),
             strokeWidth: 0.5,
           );
         },
         getDrawingVerticalLine: (value) {
           return FlLine(
-            color: Color.fromARGB(255, 175, 175, 175),
+            color: const Color.fromARGB(255, 175, 175, 175),
             strokeWidth: 0.5,
           );
         },
@@ -107,7 +109,7 @@ class _MonthLineChartState extends State<MonthLineChart> {
         topTitles: SideTitles(showTitles: false),
         leftTitles: SideTitles(
           showTitles: true,
-          getTextStyles: (context, value) => TextStyle(
+          getTextStyles: (context, value) => const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 14,
@@ -126,7 +128,7 @@ class _MonthLineChartState extends State<MonthLineChart> {
         ),
         bottomTitles: SideTitles(
           showTitles: true,
-          getTextStyles: (context, value) => TextStyle(
+          getTextStyles: (context, value) => const TextStyle(
             color: StyleResources.primarycolor,
             fontWeight: FontWeight.bold,
             fontSize: 14,

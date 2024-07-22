@@ -8,7 +8,7 @@ class TransactionList extends StatelessWidget {
   final Function _deleteTransaction;
 
   TransactionList(
-      {required List<Transaction> transactions,
+      {super.key, required List<Transaction> transactions,
       required Function deleteTransaction})
       : _transactions = List.from(transactions)
           ..sort((a, b) => b.date.compareTo(a.date)),
@@ -19,7 +19,7 @@ class TransactionList extends StatelessWidget {
     return ListView.builder(
       itemBuilder: (context, index) {
         if (index == _transactions.length) {
-          return SizedBox(height: 75.0);
+          return const SizedBox(height: 75.0);
         }
         if (index != 0 && index % 3 == 0 && _transactions.length > 4) {
           return Column(

@@ -8,25 +8,25 @@ class SettingsCard extends StatelessWidget {
   final String title;
 
   const SettingsCard({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.icon,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18),
-        side: BorderSide(width: 1,color: StyleResources.primarycolor)
+        side: const BorderSide(width: 1,color: StyleResources.primarycolor)
       ),
       color: Colors.black,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(18),
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Row(
             children: [
               Icon(
@@ -34,10 +34,10 @@ class SettingsCard extends StatelessWidget {
                 size: 30.0,
                 color:StyleResources.primarycolor,
               ),
-              SizedBox(width: 16.0),
+              const SizedBox(width: 16.0),
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,

@@ -12,14 +12,14 @@ class TransactionsState extends Equatable {
   final TStatus status;
   final String error;
 
-  TransactionsState({
+  const TransactionsState({
     required this.transactionsList,
     required this.status,
     required this.error,
   });
 
   factory TransactionsState.initial() {
-    return TransactionsState(
+    return const TransactionsState(
       transactionsList: [],
       status: TStatus.initial,
       error: '',

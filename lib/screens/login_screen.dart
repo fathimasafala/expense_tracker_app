@@ -13,6 +13,8 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
 
+  LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     context.read<LoginCubit>();
@@ -24,7 +26,7 @@ class LoginScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeScreen(),
+                builder: (context) => const HomeScreen(),
               ),
             );
             showSnackBar(context, 'Login successful! Welcome, ${state.user.name}');
@@ -38,21 +40,21 @@ class LoginScreen extends StatelessWidget {
           }
         },
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
-                Text(
+                const Text(
                   'Login To Expense Tracker',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 25),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 CustomTextFormFields(
@@ -69,11 +71,11 @@ class LoginScreen extends StatelessWidget {
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                 ),
-                SizedBox(height: 240),
+                const SizedBox(height: 240),
                 BlocBuilder<LoginCubit, LoginState>(
                   builder: (context, state) {
                     if (state is LoginLoading) {
-                      return Center(child: CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     }
                     return BottomCustomButton(
                       onTap: () {

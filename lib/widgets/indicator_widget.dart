@@ -7,12 +7,12 @@ class Indicator extends StatelessWidget {
   final Color textColor;
 
   const Indicator({
-    Key? key,
+    super.key,
     required this.color,
     required this.text,
     this.size = 14,
     this.textColor = const Color(0xff505050),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

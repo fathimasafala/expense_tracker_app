@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
 class AboutScreen extends StatefulWidget {
-  const AboutScreen({Key? key}) : super(key: key);
+  const AboutScreen({super.key});
 
   @override
   State<AboutScreen> createState() => _AboutScreenState();
@@ -37,31 +37,31 @@ class _AboutScreenState extends State<AboutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-           iconTheme: IconThemeData(color: Colors.white),
-        title: Text('About App',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 25),),
+           iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text('About App',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 25),),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(width: double.infinity),
-            RoundedImage(asset: 'assets/images/app_icon.jpeg',),
+            const SizedBox(width: double.infinity),
+            const RoundedImage(asset: 'assets/images/app_icon.jpeg',),
             Text(
               appName,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 32,color: StyleResources.primarycolor),
             ),
-            SizedBox(height: 32.0),
+            const SizedBox(height: 32.0),
             Text(
               packageName,
-              style: TextStyle(fontSize: 20,color: Colors.grey),
+              style: const TextStyle(fontSize: 20,color: Colors.grey),
             ),
-            SizedBox(height: 32.0),
+            const SizedBox(height: 32.0),
             Text(
               'Version: $version',
-              style: TextStyle(fontSize: 18,color: Colors.grey),
+              style: const TextStyle(fontSize: 18,color: Colors.grey),
             ),
-            SizedBox(height: 32.0),
+            const SizedBox(height: 32.0),
           ],
         ),
       ),

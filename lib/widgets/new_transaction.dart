@@ -1,4 +1,6 @@
 
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:expense_test_app/bloc/transaction_bloc/transactions_bloc.dart';
 import 'package:expense_test_app/models/transaction_model.dart';
 import 'package:expense_test_app/utils/extensions/currency_extension.dart';
@@ -17,17 +19,15 @@ class NewTransaction extends StatefulWidget {
   final NewTransactionState state;
   final Transaction? transaction;
 
-  NewTransaction.add({
-    Key? key,
-  })  : this.state = NewTransactionState.add,
-        this.transaction = null,
-        super(key: key);
+  const NewTransaction.add({
+    super.key,
+  })  : state = NewTransactionState.add,
+        transaction = null;
 
-  NewTransaction.edit({
-    Key? key,
+  const NewTransaction.edit({
+    super.key,
     @required this.transaction,
-  })  : this.state = NewTransactionState.edit,
-        super(key: key);
+  })  : state = NewTransactionState.edit;
 
   @override
   _NewTransactionState createState() => _NewTransactionState();
@@ -58,7 +58,7 @@ class _NewTransactionState extends State<NewTransaction> {
     final tBloc = context.read<TransactionsBloc>();
     final transaction = Transaction(
       id: widget.state == NewTransactionState.add
-          ? Uuid().v4()
+          ? const Uuid().v4()
           : widget.transaction!.id,
       title: _titleController.text,
       amount: double.parse(_amountController.text),
@@ -86,7 +86,7 @@ class _NewTransactionState extends State<NewTransaction> {
             builder: (context, child) {
               return Theme(
                 data: Theme.of(context).copyWith(
-                  colorScheme: ColorScheme.dark(
+                  colorScheme: const ColorScheme.dark(
                     background: Colors.black,
                     primary: StyleResources.primarycolor,
                     onPrimary: Colors.black,
@@ -124,7 +124,7 @@ class _NewTransactionState extends State<NewTransaction> {
     return SingleChildScrollView(
       child: Card(
         color: Colors.black,
-        margin: EdgeInsets.symmetric(
+        margin: const EdgeInsets.symmetric(
           horizontal: 10,
           vertical: 20,
         ),
@@ -147,11 +147,11 @@ class _NewTransactionState extends State<NewTransaction> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Title',
                       labelStyle: TextStyle(color: Colors.grey)),
                   controller: _titleController,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Title cannot be empty';
@@ -162,11 +162,11 @@ class _NewTransactionState extends State<NewTransaction> {
                 TextFormField(
                   decoration: InputDecoration(
                     labelText: 'Price',
-                    labelStyle: TextStyle(color: Colors.grey),
+                    labelStyle: const TextStyle(color: Colors.grey),
                     prefixText: getCurrencySymbol(),
                     prefixIconColor: Colors.yellow
                   ),
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   keyboardType: TextInputType.number,
                   controller: _amountController,
                   onFieldSubmitted: (_) => _startDatePicker(),
@@ -188,7 +188,7 @@ class _NewTransactionState extends State<NewTransaction> {
                   },
                 ),
                 Container(
-                  margin: EdgeInsets.only(
+                  margin: const EdgeInsets.only(
                     top: 10,
                     bottom: 30,
                   ),
@@ -196,10 +196,10 @@ class _NewTransactionState extends State<NewTransaction> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                           readOnly: true,
                           controller: _dateController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               labelText: 'Date',
                               labelStyle: TextStyle(color: Colors.grey)),
                           enableInteractiveSelection: false,
@@ -212,11 +212,11 @@ class _NewTransactionState extends State<NewTransaction> {
                         ),
                       ),
                       ElevatedButton(
-                        style: ButtonStyle(
+                        style: const ButtonStyle(
                             backgroundColor: MaterialStatePropertyAll(
                                 StyleResources.primarycolor)),
                         onPressed: _startDatePicker,
-                        child: Text(
+                        child: const Text(
                           'Choose Date',
                           style: TextStyle(
                             color: Colors.white,
@@ -229,9 +229,9 @@ class _NewTransactionState extends State<NewTransaction> {
                 ),
                 Row(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     ElevatedButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
                               StyleResources.primarycolor)),
                       onPressed: _onSubmit,
@@ -239,7 +239,7 @@ class _NewTransactionState extends State<NewTransaction> {
                         widget.state == NewTransactionState.add
                             ? 'Add Transaction'
                             : 'Update',
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18,
                         ),
@@ -247,7 +247,7 @@ class _NewTransactionState extends State<NewTransaction> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 )
               ],

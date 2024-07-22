@@ -1,5 +1,4 @@
 
-import 'package:expense_test_app/bloc/search_cubit/search_cubit.dart';
 import 'package:expense_test_app/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/app_blocs.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+  const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +14,8 @@ class SearchScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-           iconTheme: IconThemeData(color: Colors.white),
-        title: Text('Search Transactions',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 25),),
+           iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text('Search Transactions',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 25),),
       ),
       body: BlocBuilder<SearchCubit, SearchState>(
         builder: (context, state) {
@@ -30,10 +29,10 @@ class SearchScreen extends StatelessWidget {
             return Column(
               children: [
                 Container(
-                  margin: EdgeInsets.all(16.0),
+                  margin: const EdgeInsets.all(16.0),
                   child: TextField(
-                  style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
+                  style: const TextStyle(color: Colors.white),
+                    decoration: const InputDecoration(
                       hintText: 'Search by Title',
                       hintStyle: TextStyle(color: Colors.grey)
                     ),
@@ -44,7 +43,7 @@ class SearchScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: state.transactions.isEmpty
-                      ? Center(
+                      ? const Center(
                           child: Text('No Transactions To Show',style: TextStyle(color: Colors.white),),
                         )
                       : TransactionList(
@@ -60,7 +59,7 @@ class SearchScreen extends StatelessWidget {
               ],
             );
           }
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         },

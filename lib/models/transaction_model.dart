@@ -7,7 +7,7 @@ class Transaction extends Equatable {
   final DateTime date;
   final DateTime createdOn;
 
-  Transaction({
+  const Transaction({
     required this.id,
     required this.title,
     required this.amount,

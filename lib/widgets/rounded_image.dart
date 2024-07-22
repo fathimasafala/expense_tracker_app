@@ -4,9 +4,9 @@ class RoundedImage extends StatelessWidget {
   final String asset;
 
   const RoundedImage({
-    Key? key,
+    super.key,
     required this.asset,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

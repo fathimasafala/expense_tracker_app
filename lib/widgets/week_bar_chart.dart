@@ -10,7 +10,7 @@ import '../utils/resources/color_resources.dart';
 class WeekBarChart extends StatefulWidget {
   final List<Transaction> _transactions;
 
-  WeekBarChart({required List<Transaction> transactions}) : _transactions = transactions;
+  const WeekBarChart({super.key, required List<Transaction> transactions}) : _transactions = transactions;
 
   @override 
   State<StatefulWidget> createState() => WeekBarChartState();
@@ -45,7 +45,7 @@ class WeekBarChartState extends State<WeekBarChart> {
     _total = _spendings.reduce(max);
 
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       elevation: 7,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       color: Colors.black,
@@ -58,7 +58,7 @@ class WeekBarChartState extends State<WeekBarChart> {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Text(
+                const Text(
                   'Weekly Expenses',
                   style: TextStyle(
                     color: Colors.white,
@@ -71,7 +71,7 @@ class WeekBarChartState extends State<WeekBarChart> {
                 ),
                 Text(
                   'Total : \$${totalExpense.toStringAsFixed(2)}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: StyleResources.primarycolor,
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
@@ -184,8 +184,8 @@ class WeekBarChartState extends State<WeekBarChart> {
                   break;
               }
               return BarTooltipItem(
-                  weekDay! + '\n' + '\$' + (rod.y - 1).toString(),
-                  TextStyle(color: Colors.white, fontFamily: 'Poppins'));
+                  '${weekDay!}\n\$${rod.y - 1}',
+                  const TextStyle(color: Colors.white, fontFamily: 'Poppins'));
             }),
         touchCallback: (touchEvent, barTouchResponse) {
           setState(() {
@@ -204,7 +204,7 @@ class WeekBarChartState extends State<WeekBarChart> {
           topTitles: SideTitles(showTitles: false),
           bottomTitles: SideTitles(
             showTitles: true,
-            getTextStyles: (context, value) => TextStyle(
+            getTextStyles: (context, value) => const TextStyle(
               color: StyleResources.primarycolor,
               fontWeight: FontWeight.bold,
               fontSize: 14,
@@ -235,7 +235,7 @@ class WeekBarChartState extends State<WeekBarChart> {
             showTitles: false,
           ),
           rightTitles: SideTitles(
-            getTextStyles: (context, value) => TextStyle(
+            getTextStyles: (context, value) => const TextStyle(
                 color: Colors.white, fontSize: 8, fontWeight: FontWeight.bold),
             showTitles: true,
           )),

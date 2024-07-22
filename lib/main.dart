@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, avoid_types_as_parameter_names
+
 import 'package:expense_test_app/bloc/login_cubit/login_cubit.dart';
 import 'package:expense_test_app/bloc/theme_cubit/theme_cubit.dart';
 import 'package:expense_test_app/bloc/transaction_bloc/transactions_bloc.dart';
@@ -18,7 +20,7 @@ void main() async {
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
   Bloc.observer = AppBlocObserver();
-  runApp(new MyApp(
+  runApp(MyApp(
     notificationService: notificationService,
   ));
 }
@@ -26,7 +28,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final NotificationService notificationService;
 
-  const MyApp({required this.notificationService});
+  const MyApp({super.key, required this.notificationService});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
             )..add(GetTransactions()),
           ),
         ],
-        child: ExpenseTrackerApp(),
+        child: const ExpenseTrackerApp(),
       ),
     );
   }
@@ -55,8 +57,8 @@ class MyApp extends StatelessWidget {
 
 class ExpenseTrackerApp extends StatelessWidget {
   const ExpenseTrackerApp({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +69,7 @@ class ExpenseTrackerApp extends StatelessWidget {
           theme: ThemeData(
               fontFamily: "Poppins",
               scaffoldBackgroundColor: Colors.black,
-              appBarTheme: AppBarTheme(
+              appBarTheme: const AppBarTheme(
                   color: Colors.black,
                   iconTheme: IconThemeData(color: Colors.black))),
           title: 'Expense Tracker',
