@@ -1,9 +1,10 @@
 
+import 'package:expense_test_app/bloc/search_cubit/search_cubit.dart';
 import 'package:expense_test_app/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/app_blocs.dart';
+import '../../bloc/transaction_bloc/transactions_bloc.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});

@@ -2,8 +2,8 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:expense_test_app/models/transaction_model.dart';
-import 'package:expense_test_app/repositories/transactions_repository.dart';
+import 'package:expense_test_app/presentation/models/transaction_model.dart';
+import 'package:expense_test_app/presentation/repositories/transactions_repository.dart';
 part 'transactions_event.dart';
 part 'transactions_state.dart';
 

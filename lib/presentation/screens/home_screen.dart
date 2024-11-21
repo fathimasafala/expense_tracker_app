@@ -1,16 +1,20 @@
 
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:expense_test_app/screens/search_screen.dart.dart';
-import 'package:expense_test_app/screens/settings_screen.dart';
+import 'package:expense_test_app/bloc/search_cubit/search_cubit.dart';
+import 'package:expense_test_app/bloc/transaction_bloc/transactions_bloc.dart';
+import 'package:expense_test_app/presentation/screens/search_screen.dart.dart';
+import 'package:expense_test_app/presentation/screens/settings_screen.dart';
+import 'package:expense_test_app/utils/notification_service.dart';
 import 'package:expense_test_app/utils/resources/color_resources.dart';
+import 'package:expense_test_app/widgets/month_line_chart.dart';
+import 'package:expense_test_app/widgets/new_transaction.dart';
+import 'package:expense_test_app/widgets/transaction_list.dart';
+import 'package:expense_test_app/widgets/week_bar_chart.dart';
+import 'package:expense_test_app/widgets/week_pie_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../bloc/app_blocs.dart';
-import '../widgets/widgets.dart';
 import '../repositories/repositories.dart';
-import '../utils/notification_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

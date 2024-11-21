@@ -2,9 +2,8 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:expense_test_app/models/login_model.dart';
-
-import '../../repositories/repositories.dart';
+import 'package:expense_test_app/presentation/models/login_model.dart';
+import 'package:expense_test_app/presentation/repositories/login_repository.dart';
 
 part 'login_state.dart';
 

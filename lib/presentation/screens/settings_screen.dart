@@ -1,11 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:expense_test_app/bloc/theme_cubit/theme_cubit.dart';
+import 'package:expense_test_app/widgets/settings_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../bloc/theme_cubit/theme_cubit.dart';
-import '../widgets/widgets.dart';
 import 'about_screen.dart';
 
 class SettingsScreen extends StatelessWidget {

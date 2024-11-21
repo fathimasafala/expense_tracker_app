@@ -2,7 +2,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:expense_test_app/bloc/transaction_bloc/transactions_bloc.dart';
-import 'package:expense_test_app/models/transaction_model.dart';
+import 'package:expense_test_app/presentation/models/transaction_model.dart';
 import 'package:expense_test_app/utils/extensions/currency_extension.dart';
 import 'package:expense_test_app/utils/resources/color_resources.dart';
 import 'package:flutter/material.dart';

@@ -6,8 +6,7 @@ import 'package:expense_test_app/utils/extensions/currency_extension.dart';
 import 'package:expense_test_app/utils/resources/color_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
-import '../widgets/widgets.dart';
+import '../../widgets/new_transaction.dart';
 import '../models/models.dart';
 
 class DetailsScreen extends StatelessWidget {

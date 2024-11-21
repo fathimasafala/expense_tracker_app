@@ -1,5 +1,6 @@
 
-import 'package:expense_test_app/models/transaction_model.dart';
+
+import 'package:expense_test_app/presentation/models/transaction_model.dart';
 import 'package:expense_test_app/widgets/transaction_item.dart';
 import 'package:flutter/material.dart';
 

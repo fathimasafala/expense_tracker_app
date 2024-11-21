@@ -1,7 +1,7 @@
 
-import 'package:expense_test_app/models/transaction_model.dart';
-import 'package:expense_test_app/screens/details_screen.dart';
-import 'package:expense_test_app/utils/extensions/currency_extension.dart';
+import 'package:expense_test_app/presentation/models/transaction_model.dart';
+import 'package:expense_test_app/presentation/screens/details_screen.dart';
+import 'package:expense_test_app/utils/extensions/extensions.dart';
 import 'package:expense_test_app/utils/resources/color_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
